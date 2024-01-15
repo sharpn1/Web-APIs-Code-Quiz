@@ -1,7 +1,7 @@
 "strict code";
 
 let currentQuestion;
-let countdownTimer = 75;
+let countdownTimer = 60;
 let countdownInterval;
 
 var initialsInput = document.querySelector("#initials");
@@ -15,50 +15,8 @@ let questionScreen = document.querySelector("#questions");
 let questionTitle = document.querySelector("#question-title");
 let choicesDiv = document.querySelector("#choices");
 
-let rightBuzz = new Audio("./assets/sfx/correct.wav");
-let wrongBuzz = new Audio("./assets/sfx/incorrect.wav");
-
-////////////////////////////////////////////////
-// Quiz Psuedocode
-//-------------------------------
-/* 
--show start page
-- click start
-  -start timer at 75s
-    hide start screen
-    unhide question screen
-  -show question
-    -select answer:
-    is correct?
-      -if no: 
-        feedback (wrong)
-        -5 from timer
-      -if yes: 
-          feedback (right)
-            increment question
-    - last question OR timer === 0
-        hide questions
-        show endscreen
-          display final score
-        - input initials
-            if empty display error
-        - click submit
-          - save score and initials to local storage
-          - redirect to highschore.html
-            - retrieve values from local storage
-              - display high score histories
-                - clear history or 
-                - go back to start page
-
-                save score to local storage
-                create array
-                push score into array
-                sort array
-                display as ordered list score
-*/
-
-//-------------------------------
-////////////////////////////////////////////////
+/*let rightBuzz = new Audio("./assets/sfx/correct.wav");
+let wrongBuzz = new Audio("./assets/sfx/incorrect.wav");*/
 
 //startQuiz function to start quiz
 function startQuiz() {
@@ -128,7 +86,7 @@ function userChoice(e) {
   //if selected answer = the right answer
   if (selection == correctAnswer) {
     feedback.textContent = "Correct!";
-    rightBuzz.play();
+    // rightBuzz.play();
     //increment currentQuestion array
     currentQuestion++;
     //checks to see if it is currently last question
@@ -141,7 +99,7 @@ function userChoice(e) {
   } else {
     //otherwise, if wrong
     feedback.textContent = "Wrong!";
-    wrongBuzz.play();
+    // wrongBuzz.play();
     // decrease timer by 5s
     countdownTimer -= 5;
   }
