@@ -3,61 +3,49 @@
 let quizQuestions = [
   {
     //q1
-    question: "Inside which HTML element do we put the JavaScript?",
-    choices: ["<script>", "<js>", "<javascript>", "<scripting>"],
-    answer: "<script>",
+    question: "What defines the content of web pages?",
+    choices: ["<Web>", "<JavaScript>", "<HTML>", "<CSS>"],
+    answer: "<HTML>",
   },
   {
     //q2
-    question: "How do you write 'Hello World!' in an alert box?",
-    choices: [
-      "prompt('Hello World!')",
-      "alertBox('Hello World!')",
-      "alert('Hello World!')",
-      "msg('Hello World!')",
-    ],
-    answer: "alert('Hello World!')",
+    question: "What specify the layout of web pages?",
+    choices: ["<Web>", "<JavaScript>", "<HTML>", "<CSS>"],
+    answer: "<CSS>",
   },
   {
     //q3
-    question: "What is the output of the code console.log(false == '0')",
-    choices: ["True", "False", "0", "None of the above"],
-    answer: "True",
+    question: "JavaScript is the programming language of the...?",
+    choices: ["<Web>", "<js>", "<HTML>", "<scripting>"],
+    answer: "<Web>",
   },
   {
     //q4
-    question:
-      "What is the correct “if” statements to execute certain code if “x” is equal to 2?",
-    choices: ["if(x2)", "if(x == 2)", "if(x === 2)", "if(x = 2)"],
-    answer: "if(x == 2)",
+    question: "A JavaScript function is placed in which section of an HTML page?",
+    choices: ["<html>", "<head>", "<body>", "<footer>"],
+    answer: "<body>",
   },
   {
     //q5
-    question:
-      "What is the correct method to round the number 24.76 to the nearest integer?",
-    choices: [
-      "round(24.76)",
-      "rnd(24.76)",
-      "Math.round(24.76)",
-      "Math.rnd(24.76)",
-    ],
-    answer: "Math.round(24.76)",
+    question: "JavaScript has a Boolean data type. It can only take the values that are ...?",
+    choices: ["TRUE / FALSE", "ON / OFF", "YES / NO", "UP/DOWN"],
+    answer: "TRUE / FALSE",
   },
   {
     //q6
-    question: "Which of the following is an event listener in Javascript",
-    choices: ["onclick", "blur", "click", "click()"],
-    answer: "click",
+    question: "What special variable can hold more than one value or a list of items?",
+    choices: ["Arrays", "Objects", "Strings", "Syntax"],
+    answer: "Arrays",
   },
   {
     //q7
-    question: "What is the syntax of a “for” statement in JavaScript?",
+    question: "API stands for?",
     choices: [
-      "for(increment; condition; initialization)",
-      "for(initialization, condition, increment)",
-      "for(condition; initialization; increment)",
-      "for(initialization; condition; increment)",
+      "All Programming Interface",
+      "Application Programming Internet",
+      "Application Processors Interface",
+      "Application Programming Interface",
     ],
-    answer: "for(initialization; condition; increment)",
+    answer: "Application Programming Interface",
   },
 ];

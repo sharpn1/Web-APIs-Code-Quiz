@@ -1,7 +1,7 @@
 "strict code";
 
 let currentQuestion;
-let countdownTimer = 60;
+let countdownTimer = 100;
 let countdownInterval;
 
 var initialsInput = document.querySelector("#initials");
@@ -15,8 +15,6 @@ let questionScreen = document.querySelector("#questions");
 let questionTitle = document.querySelector("#question-title");
 let choicesDiv = document.querySelector("#choices");
 
-/*let rightBuzz = new Audio("./assets/sfx/correct.wav");
-let wrongBuzz = new Audio("./assets/sfx/incorrect.wav");*/
 
 //startQuiz function to start quiz
 function startQuiz() {
@@ -86,8 +84,7 @@ function userChoice(e) {
   //if selected answer = the right answer
   if (selection == correctAnswer) {
     feedback.textContent = "Correct!";
-    // rightBuzz.play();
-    //increment currentQuestion array
+        //increment currentQuestion array
     currentQuestion++;
     //checks to see if it is currently last question
     if (currentQuestion === quizQuestions.length) {
@@ -99,7 +96,7 @@ function userChoice(e) {
   } else {
     //otherwise, if wrong
     feedback.textContent = "Wrong!";
-    // wrongBuzz.play();
+   
     // decrease timer by 5s
     countdownTimer -= 5;
   }
@@ -153,23 +150,23 @@ function submitInitials() {
 //save initials and score function
 function saveScore() {
   let userInitials = submitInitials();
-  let userScoreProfile = { name: userInitials, score: timer.textContent };
+  let userScore = { name: userInitials, score: timer.textContent };
   //save score and initials to local storage
-  let hasScore = localStorage.getItem("userScoreProfile");
+  let hasScore = localStorage.getItem("userScore");
 
   let scoresArray = [];
-  //check if userScoreProfile has content
+  //check if userScore has content
   if (hasScore) {
     //if true, parse the string into array
     scoresArray = JSON.parse(hasScore);
     //push score into array
-    scoresArray.push(userScoreProfile);
+    scoresArray.push(userScore);
   } else {
     //else save object inside the array
-    scoresArray = [userScoreProfile];
+    scoresArray = [userScore];
   }
   //save array into local storage
-  localStorage.setItem("userScoreProfile", JSON.stringify(scoresArray));
+  localStorage.setItem("userScore", JSON.stringify(scoresArray));
 }
 
 //Submit button listens for a click event

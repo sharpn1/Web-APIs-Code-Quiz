@@ -1,21 +1,21 @@
 "strict code";
 let clearBtn = document.querySelector("#clear");
 
-//final highscore function
-function showHighscore() {
+//highscore function
+function highScore() {
   let highscoreList = document.getElementById("highscores");
 
-  let userScoreProfileString = localStorage.getItem("userScoreProfile");
-  let userScoreProfiles = JSON.parse(userScoreProfileString);
+  let userScoreString = localStorage.getItem("userScore");
+  let userScore = JSON.parse(userScoreString);
 
-  for (i = 0; i < userScoreProfiles.length; i++) {
+  for (i = 0; i < userScore.length; i++) {
     let highscoreListItem = document.createElement("li");
     highscoreList.appendChild(highscoreListItem);
-    highscoreListItem.textContent = `${userScoreProfiles[i].name} - ${userScoreProfiles[i].score}`;
+    highscoreListItem.textContent = `${userScore[i].name} - ${userScore[i].score}`;
   }
 }
 
-showHighscore();
+highScore();
 
 //clear highscore function
 clearBtn.addEventListener("click", function () {
