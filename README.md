@@ -33,8 +33,8 @@ As a coding boot camp student, I want to take a timed quiz on JavaScript fundame
 - Ability to save user's initials and their score.
 
 ## Screenshot
-
-![Quiz Screenshot](./assets/images/quiz-screenshot.png)
+![image](https://github.com/sharpn1/Web-APIs-Code-Quiz/assets/152098466/8a1d3a64-fc64-4157-9c90-35625df9bcd0) ![image](https://github.com/sharpn1/Web-APIs-Code-Quiz/assets/152098466/38219b19-aede-4f35-9173-045f3095d224)
+![image](https://github.com/sharpn1/Web-APIs-Code-Quiz/assets/152098466/c76b6466-4178-478a-b7ec-c210994b205c)
 
 ## Built With
 
@@ -44,14 +44,11 @@ As a coding boot camp student, I want to take a timed quiz on JavaScript fundame
 
 ## Authors
 
-- **Your Name** - *Initial work* - [GitHub Profile](https://github.com/yourusername)
+- **Shahreen Ahmed** - *SA* -
+-  https://github.com/sharpn1/Web-APIs-Code-Quiz
+- https://sharpn1.github.io/Web-APIs-Code-Quiz/
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License 
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
