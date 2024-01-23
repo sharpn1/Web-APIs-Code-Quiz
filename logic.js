@@ -16,49 +16,43 @@ let questionTitle = document.querySelector("#question-title");
 let choicesDiv = document.querySelector("#choices");
 
 
-//startQuiz function to start quiz
+//startQuiz function 
 function startQuiz() {
   let startScreen = document.querySelector("#start-screen");
-  //change class from start to hide
   startScreen.setAttribute("class", "hide");
-  //unhide question screen
   questionScreen.classList.remove("hide");
-  //unhide feedback footer
   feedback.classList.remove("hide");
   //set current question array to 0
   currentQuestion = 0;
 
-  //start timer
+  //timer
   countdown();
-  //show question
+  //show questions
   renderQuestion();
 }
 
-//show next question function
+//next question 
 function renderQuestion() {
   //clear previous question
   clearQuestion();
-  //then draw next question
-  drawQuestion();
+  //then make next question
+  makeQuestion();
 }
 
 //create questions
-function drawQuestion() {
+function makeQuestion() {
   let theQuestion = quizQuestions[currentQuestion].question;
   questionTitle.innerText = theQuestion;
 
-  //create an ordered list of answers
+  //ordered list
   let choicesList = document.createElement("ol");
   let answers = quizQuestions[currentQuestion].choices;
-
-  //append the ordered list inside the choices div
   choicesDiv.appendChild(choicesList);
 
-  //create a for loop that will loop through all the choices
-  //within the quizQuestions Array
-  for (i = 0; i < answers.length; i++) {
-    //create a button with an ordered list item inside
-    //for each choice within quizQuestion
+  //loop 
+   for (i = 0; i < answers.length; i++) {
+    //button with list item 
+    //choice quizQuestion
     let choiceButton = document.createElement("button");
     let choices = document.createElement("li");
 
@@ -69,23 +63,21 @@ function drawQuestion() {
   choices.addEventListener("click", userChoice);
 }
 
-//Clear current question function
+//Clear current question 
 function clearQuestion() {
   questionTitle.innerText = "";
   choices.innerText = "";
 }
 
-//Answer selection function
+//Answer selection 
 function userChoice(e) {
   let selection = e.target.innerText;
   let correctAnswer = quizQuestions[currentQuestion].answer;
 
-  //answer logic
-  //if selected answer = the right answer
+  //if selected answer = the correct answer
   if (selection == correctAnswer) {
     feedback.textContent = "Correct!";
-        //increment currentQuestion array
-    currentQuestion++;
+      currentQuestion++;
     //checks to see if it is currently last question
     if (currentQuestion === quizQuestions.length) {
       endQuiz();
@@ -102,7 +94,7 @@ function userChoice(e) {
   }
 }
 
-//Endscreen function
+//Endscreen 
 function endQuiz() {
   showScore();
   questionScreen.setAttribute("class", "hide");
@@ -110,7 +102,7 @@ function endQuiz() {
   endScreen.classList.remove("hide");
 }
 
-//Countdown Function
+//Countdown 
 function countdown() {
   countdownInterval = setInterval(function () {
     countdownTimer--;
@@ -127,9 +119,7 @@ startBtn.addEventListener("click", function () {
   startQuiz();
 });
 
-//Logic for Scores
-
-//show score function
+//show score 
 function showScore() {
   let finalScore = document.querySelector("#final-score");
 
@@ -137,8 +127,8 @@ function showScore() {
   finalScore.innerText = timer.textContent;
 }
 
-//initials input
-function submitInitials() {
+//place initials 
+function saveInitials() {
   let initials = initialsInput.value;
   if (initials) {
     return initials;
@@ -147,29 +137,29 @@ function submitInitials() {
   }
 }
 
-//save initials and score function
+//save initials & score
 function saveScore() {
-  let userInitials = submitInitials();
+  let userInitials = saveInitials();
   let userScore = { name: userInitials, score: timer.textContent };
-  //save score and initials to local storage
+  //save initials & score - local storage
   let hasScore = localStorage.getItem("userScore");
 
   let scoresArray = [];
   //check if userScore has content
   if (hasScore) {
-    //if true, parse the string into array
+    //if true, parse the string - array
     scoresArray = JSON.parse(hasScore);
-    //push score into array
+    //push score - array
     scoresArray.push(userScore);
   } else {
-    //else save object inside the array
+    //else save object - array
     scoresArray = [userScore];
   }
-  //save array into local storage
+  //save array - local storage
   localStorage.setItem("userScore", JSON.stringify(scoresArray));
 }
 
-//Submit button listens for a click event
+//Submit button 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
   //retrieve values from local storage
